@@ -16,3 +16,4 @@ The supplied Lumenairs artwork is bundled locally as `lumenairs-hero.png`.
 
 To publish the HR event:
 Replace the "Invitations opening soon" span with an `<a>` pointing to the final Luma URL and update the event date.
+Last updated September 2026
