@@ -1,19 +1,27 @@
-# Lumenairs HR — eccentric/refined concept
+# Lumenair Dinners
 
-This concept is intentionally less conventional than the prior versions.
+Static website package ready for GitHub + Vercel.
 
-Design direction:
-- Near-black / midnight background
-- Amber, violet and pink iridescent accents
-- Fine orbital linework inspired by the supplied artwork
-- Editorial serif typography
-- Off-grid, asymmetric composition
-- Rotated and vertical microcopy
-- Event information presented like a private invitation rather than a standard event card
-- Much shorter body copy
+## Files
+- index.html
+- lumenair-dinners-hero.png
+- ben-russo.png
+- mike-hill.png
+- emma-yu.png
+- ashmi-chokshi.png
+- hafiz-khalid.png
+- vamshi-sriperumbudur.png
+- austin-webb.png
+- jennifer-sikora.png
+- README.md
 
-The supplied Lumenairs artwork is bundled locally as `lumenairs-hero.png`.
+## What changed
+- Added a compact testimonial section near the bottom of the page
+- Each testimonial includes a small headshot
+- The layout uses repeating animated rows so the section feels more expansive than six static quotes
 
-To publish the HR event:
-Replace the "Invitations opening soon" span with an `<a>` pointing to the final Luma URL and update the event date.
-Last updated September 2026
+## Deploy
+Upload/replace these files in the root of your GitHub repository and commit to `main`.
+Vercel should redeploy automatically.
+
+- Updated the dinners section to show upcoming and past events, including the September 9, 2026 San Francisco dinner.
