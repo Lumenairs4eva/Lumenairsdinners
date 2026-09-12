@@ -38,3 +38,7 @@ Vercel should redeploy automatically.
 
 - Removed the top-left Lumenair Dinners wordmark from the header.
 - Removed the vertical copy to the right of the hero image.
+
+- Standardized all page content to a single responsive max-width shell with fluid gutters.
+- Added tablet, mobile, and narrow-phone responsive behavior.
+- Updated the upcoming dinner topic to “Rebuilding Work for the AI Era.”
