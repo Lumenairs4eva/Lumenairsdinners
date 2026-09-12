@@ -35,3 +35,6 @@ Vercel should redeploy automatically.
 
 - Redesigned the Hosts section as About Us / Your Hosts with a mission paragraph and horizontal host profiles.
 - Updated the House Rule to encourage active participation.
+
+- Removed the top-left Lumenair Dinners wordmark from the header.
+- Removed the vertical copy to the right of the hero image.

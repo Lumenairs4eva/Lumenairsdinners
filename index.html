@@ -24,15 +24,41 @@
       margin:0;
       color:var(--ink);
       background:
-        radial-gradient(circle at 16% 8%, rgba(255,142,30,.15), transparent 28%),
-        radial-gradient(circle at 90% 22%, rgba(77,68,255,.11), transparent 32%),
-        linear-gradient(180deg,var(--bg),var(--bg2));
+        radial-gradient(circle at 16% 6%, rgba(255,142,30,.18), transparent 24%),
+        radial-gradient(circle at 88% 12%, rgba(88,76,255,.16), transparent 28%),
+        radial-gradient(circle at 12% 46%, rgba(138,92,255,.10), transparent 24%),
+        radial-gradient(circle at 84% 68%, rgba(255,130,66,.10), transparent 26%),
+        radial-gradient(circle at 24% 92%, rgba(232,154,203,.09), transparent 22%),
+        linear-gradient(180deg, #06060f 0%, #090814 28%, #0a0815 58%, #070611 100%);
       font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       -webkit-font-smoothing:antialiased;
       overflow-x:hidden;
+      position:relative;
+    }
+    body:before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 18% 24%, rgba(255,163,92,.08), transparent 18%),
+        radial-gradient(circle at 82% 38%, rgba(122,104,255,.08), transparent 20%),
+        radial-gradient(circle at 58% 84%, rgba(232,154,203,.05), transparent 16%);
+      opacity:.9;
+      z-index:0;
+    }
+    body:after{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:linear-gradient(180deg, rgba(255,255,255,.018), rgba(255,255,255,0) 18%, rgba(255,255,255,.012) 60%, rgba(255,255,255,.02) 100%);
+      mix-blend-mode:screen;
+      opacity:.4;
+      z-index:0;
     }
     a{color:inherit}
-    .wrap{width:min(calc(100% - 44px),var(--max));margin:auto;position:relative}
+    .wrap{width:min(calc(100% - 44px),var(--max));margin:auto;position:relative;z-index:1}
     .serif{font-family:Georgia,"Times New Roman",serif}
     header{
       height:86px;display:flex;align-items:center;justify-content:space-between;
@@ -60,6 +86,9 @@
     .orbit.one{width:420px;height:420px;left:-270px;top:70px}
     .orbit.two{width:560px;height:560px;right:-380px;top:560px}
     .orbit.three{width:260px;height:260px;left:12%;top:1260px;opacity:.35}
+    .orbit.four{width:360px;height:360px;right:-170px;top:1820px;opacity:.22}
+    .orbit.five{width:300px;height:300px;left:-130px;top:2480px;opacity:.18}
+    .orbit.six{width:420px;height:420px;right:6%;top:3220px;opacity:.16}
 
     .hero{
       min-height:770px;
@@ -111,6 +140,65 @@
     }
 
     .section{position:relative;padding:105px 0}
+    .section,
+    .testimonials,
+    .statement,
+    .organizers,
+    footer{
+      position:relative;
+      isolation:isolate;
+    }
+    .section:before,
+    .testimonials:before,
+    .statement:before,
+    .organizers:before,
+    footer:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.018), rgba(255,255,255,.004) 35%, rgba(255,255,255,.012) 100%);
+      z-index:-2;
+    }
+    #dinner:after,
+    #about:after,
+    #testimonials:after,
+    .statement:after,
+    .organizers:after{
+      content:"";
+      position:absolute;
+      pointer-events:none;
+      border-radius:50%;
+      filter:blur(10px);
+      opacity:.65;
+      z-index:-1;
+    }
+    #dinner:after{
+      width:340px;height:340px;
+      left:-120px;top:110px;
+      background:radial-gradient(circle, rgba(100,86,255,.13), rgba(100,86,255,0) 68%);
+    }
+    #about:after{
+      width:420px;height:420px;
+      right:-140px;top:160px;
+      background:radial-gradient(circle, rgba(255,142,35,.11), rgba(255,142,35,0) 68%);
+    }
+    #testimonials:after{
+      width:360px;height:360px;
+      left:8%;top:110px;
+      background:radial-gradient(circle, rgba(232,154,203,.10), rgba(232,154,203,0) 68%);
+    }
+    .statement:after{
+      width:420px;height:420px;
+      right:6%;top:70px;
+      background:radial-gradient(circle, rgba(126,109,255,.11), rgba(126,109,255,0) 70%);
+    }
+    .organizers:after{
+      width:280px;height:280px;
+      left:6%;top:40px;
+      background:radial-gradient(circle, rgba(255,173,88,.09), rgba(255,173,88,0) 70%);
+    }
     .micro{
       font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#9b91a1;
     }
@@ -124,6 +212,7 @@
       grid-template-columns:.7fr 1.3fr;
       align-items:center;
       position:relative;
+      background:linear-gradient(180deg, rgba(255,255,255,.012), rgba(255,255,255,.004));
     }
     .event-number{
       font-family:Georgia,"Times New Roman",serif;
@@ -176,45 +265,6 @@
       padding-bottom:7px;border-bottom:1px solid #d7b5ff;
     }
 
-    .past-dinners{
-      grid-column:1 / -1;
-      display:grid;
-      grid-template-columns:.7fr 1.3fr;
-      gap:60px;
-      align-items:center;
-      padding:25px 0 6px;
-      margin-top:28px;
-      border-top:1px solid rgba(255,255,255,.09);
-    }
-    .past-label{
-      color:var(--muted);
-    }
-    .past-event{
-      justify-self:end;
-      width:min(100%,720px);
-      display:grid;
-      grid-template-columns:1.2fr .65fr .65fr;
-      gap:28px;
-      align-items:center;
-      color:var(--muted);
-      font-size:12px;
-      padding:4px 30px 4px 0;
-    }
-    .past-event-title{
-      font-family:Georgia,"Times New Roman",serif;
-      font-size:20px;
-      color:rgba(247,241,234,.68);
-      letter-spacing:-.01em;
-    }
-    .past-event strong{
-      display:block;
-      color:rgba(247,241,234,.48);
-      font-size:10px;
-      font-weight:500;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      margin-bottom:4px;
-    }
 
     /* philosophy */
     .philosophy{
@@ -222,6 +272,11 @@
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:60px;align-items:start;
+      background:linear-gradient(180deg, rgba(255,255,255,.008), rgba(255,255,255,.003));
+      border-top:1px solid rgba(255,255,255,.05);
+      border-bottom:1px solid rgba(255,255,255,.05);
+      padding-left:22px;
+      padding-right:22px;
     }
     .philosophy .left{
       padding-top:38px;
@@ -255,8 +310,11 @@
 
 
     .organizers{
-      padding:36px 0 58px;
+      padding:36px 22px 58px;
       border-top:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.012), rgba(255,255,255,.004));
+      border-radius:18px;
+      margin-top:18px;
     }
     .organizers-intro{
       display:grid;
@@ -352,9 +410,13 @@
 
 
     .testimonials{
-      padding:10px 0 105px;
+      padding:28px 22px 105px;
       position:relative;
       overflow:hidden;
+      background:linear-gradient(180deg, rgba(255,255,255,.01), rgba(255,255,255,.004));
+      border-top:1px solid rgba(255,255,255,.05);
+      border-bottom:1px solid rgba(255,255,255,.05);
+      border-radius:18px;
     }
     .testimonials-intro{
       display:grid;
@@ -441,8 +503,11 @@
     }
 
     .statement{
-      padding:130px 0 145px;
+      padding:130px 22px 145px;
       position:relative;
+      background:linear-gradient(180deg, rgba(255,255,255,.01), rgba(255,255,255,.003));
+      border-radius:18px;
+      margin-top:18px;
     }
     .statement .micro{
       position:absolute;left:0;top:132px;
@@ -467,6 +532,10 @@
       display:grid;grid-template-columns:1fr 1fr;
       align-items:center;
       color:var(--muted);font-size:12px;
+      background:linear-gradient(180deg, rgba(255,255,255,.01), rgba(255,255,255,.004));
+      border-radius:18px 18px 0 0;
+      padding-left:22px;
+      padding-right:22px;
     }
     footer .right{text-align:right}
 
@@ -478,33 +547,33 @@
       .hero-art{height:430px;transform:none}
       .vertical-note{right:8px}
       .orbit.one{left:-320px}
+      .orbit.four{right:-220px;top:1780px}
+      .orbit.five{left:-170px;top:2640px}
+      .orbit.six{right:-210px;top:3520px}
       .event-stage{grid-template-columns:1fr;padding:70px 0;min-height:auto}
       .event-kicker{padding:0 0 34px;max-width:none}
       .event-number{font-size:150px;top:20px}
       .event-card{margin:0;width:100%;padding:38px 28px;transform:none}
-      .past-dinners{grid-template-columns:1fr;gap:14px;padding:22px 0 0;margin-top:30px}
-      .past-event{justify-self:start;width:100%;grid-template-columns:1fr 1fr;gap:12px 20px;padding:0}
-      .past-event-title{grid-column:1 / -1}
       .event-meta{display:grid;grid-template-columns:1fr 1fr}
-      .philosophy{grid-template-columns:1fr;min-height:auto;gap:20px}
+      .philosophy{grid-template-columns:1fr;min-height:auto;gap:20px;padding-left:16px;padding-right:16px}
       .principles{padding-top:40px}
-      .organizers{padding:30px 0 38px}
+      .organizers{padding:26px 16px 34px;margin-top:14px}
       .organizers-intro{grid-template-columns:1fr;gap:8px;margin-bottom:24px}
       .organizers-mission{margin:4px 0 0;font-size:14px}
       .organizer-list{grid-template-columns:1fr;gap:18px}
       .organizer{grid-template-columns:60px 1fr;gap:13px;padding-top:15px}
       .portrait-wrap{width:60px;height:60px}
 
-      .testimonials{padding:0 0 86px}
+      .testimonials{padding:22px 16px 74px}
       .testimonials-intro{grid-template-columns:1fr;gap:14px;margin-bottom:24px}
       .testimonials-intro p{justify-self:start;max-width:none}
       .testimonial-card{width:280px;min-height:108px;padding:14px 15px;grid-template-columns:46px 1fr;gap:12px}
       .testimonial-avatar{width:46px;height:46px}
       .testimonial-quote{font-size:13px}
-      .statement{padding:100px 0 110px}
+      .statement{padding:86px 16px 98px;margin-top:14px}
       .statement .micro{position:static;writing-mode:initial;transform:none;margin-bottom:26px}
       blockquote{margin:0}
-      footer{grid-template-columns:1fr;gap:8px;padding:36px 0;min-height:auto}
+      footer{grid-template-columns:1fr;gap:8px;padding:30px 16px;min-height:auto}
       footer .right{text-align:left}
     }
   </style>
@@ -513,10 +582,13 @@
   <div class="orbit one"></div>
   <div class="orbit two"></div>
   <div class="orbit three"></div>
+  <div class="orbit four"></div>
+  <div class="orbit five"></div>
+  <div class="orbit six"></div>
 
   <div class="wrap">
     <header>
-      <a class="wordmark" href="#">Lumenair Dinners</a>
+      <span class="wordmark" aria-hidden="true"></span>
       <nav>
         <a href="#dinner">Next dinner</a>
         <a href="#about">About</a>
@@ -535,7 +607,6 @@
 
         <div class="hero-art">
           <img src="lumenair-dinners-hero.png" alt="Lumenair Dinners" />
-          <div class="vertical-note">Private dinner series · San Francisco · 2026</div>
         </div>
       </section>
 
@@ -544,31 +615,20 @@
           <div class="event-number">01</div>
 
           <div class="event-kicker">
-            <span class="micro">Dinners</span>
-            <p>Upcoming dinners are shown here, with past gatherings kept quietly in view below.</p>
+            <h2 class="upcoming-title">Upcoming dinners</h2>
           </div>
 
           <div class="event-card">
             <div class="micro">Upcoming / San Francisco</div>
             <h2>The People Side of the AI Era</h2>
             <div class="event-meta">
-              <div><strong>Date</strong><br>Coming soon</div>
+              <div><strong>Date</strong><br>Wednesday, October 21, 2026</div>
               <div><strong>Guests</strong><br>CPOs + HR executives</div>
               <div><strong>Format</strong><br>Private dinner</div>
             </div>
             <span class="event-cta">Invitations opening soon</span>
           </div>
-
-          <div class="past-dinners">
-            <div class="past-label">
-              <span class="micro">Past dinner</span>
-            </div>
-            <div class="past-event">
-              <div class="past-event-title">San Francisco Dinner</div>
-              <div><strong>Date</strong>September 9, 2026</div>
-              <div><strong>Location</strong>San Francisco</div>
-            </div>
-          </div>
+</div>
         </div>
       </section>
 
