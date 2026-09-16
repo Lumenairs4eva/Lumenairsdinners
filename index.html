@@ -274,7 +274,7 @@
       font-size:clamp(42px,5vw,70px);
       font-weight:400;line-height:.96;letter-spacing:-.04em;
       margin:15px 0 34px;
-      max-width:620px;
+      max-width:760px;
     }
     .event-meta{
       display:flex;justify-content:space-between;gap:20px;
@@ -334,46 +334,23 @@
 
 
     .organizers{
-      padding:36px clamp(16px,2.2vw,28px) 58px;
+      padding:34px clamp(16px,2.2vw,28px) 46px;
       border-top:1px solid var(--line);
       background:linear-gradient(180deg, rgba(255,255,255,.012), rgba(255,255,255,.004));
       border-radius:18px;
       margin-top:18px;
     }
-    .organizers-intro{
+    .host-summary{
       display:grid;
-      grid-template-columns:.65fr 1.35fr;
-      gap:60px;
+      grid-template-columns:220px minmax(0,1fr);
+      gap:42px;
       align-items:start;
-      margin-bottom:34px;
     }
-    .organizers-intro h2{
-      font-family:Georgia,"Times New Roman",serif;
-      font-weight:400;
-      font-size:clamp(34px,4vw,52px);
-      line-height:.98;
-      letter-spacing:-.04em;
-      margin:16px 0 0;
-    }
-    .organizers-mission{
-      margin:30px 0 0;
-      max-width:620px;
-      color:var(--soft);
-      font-size:15px;
-      line-height:1.55;
-    }
-    .organizer-list{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:34px;
-    }
-    .organizer{
+    .host-profile{
       display:grid;
       grid-template-columns:72px 1fr;
-      gap:16px;
+      gap:14px;
       align-items:center;
-      padding-top:18px;
-      border-top:1px solid rgba(255,255,255,.10);
     }
     .portrait-wrap{
       position:relative;
@@ -389,7 +366,7 @@
       background:
         linear-gradient(var(--bg),var(--bg)) padding-box,
         linear-gradient(135deg,var(--amber),var(--rose),var(--violet),var(--amber)) border-box;
-      opacity:.55;
+      opacity:.45;
     }
     .portrait{
       width:100%;
@@ -402,27 +379,19 @@
     }
     .organizer-copy h3{
       font-family:Georgia,"Times New Roman",serif;
-      font-size:21px;
+      font-size:20px;
       font-weight:400;
       margin:0 0 3px;
     }
     .organizer-role{
       font-size:10px;
       text-transform:uppercase;
-      letter-spacing:.15em;
+      letter-spacing:.14em;
       color:#c7a8e8;
       margin-bottom:7px;
     }
-    .organizer-copy p{
-      margin:0;
-      color:var(--muted);
-      font-size:12px;
-      line-height:1.45;
-      max-width:350px;
-    }
     .organizer-copy a{
       display:inline-block;
-      margin-top:7px;
       font-size:10px;
       letter-spacing:.11em;
       text-transform:uppercase;
@@ -431,7 +400,18 @@
       border-bottom:1px solid rgba(255,255,255,.22);
       padding-bottom:3px;
     }
-
+    .host-story{
+      max-width:760px;
+      color:var(--soft);
+      font-size:14px;
+      line-height:1.55;
+    }
+    .host-story p{
+      margin:0 0 12px;
+    }
+    .host-story p:last-child{
+      margin-bottom:0;
+    }
 
     .testimonials{
       padding:28px clamp(16px,2.2vw,28px) 105px;
@@ -626,12 +606,11 @@
       .event-meta{display:grid;grid-template-columns:1fr 1fr}
       .philosophy{grid-template-columns:1fr;min-height:auto;gap:20px;padding-left:16px;padding-right:16px}
       .principles{padding-top:40px}
-      .organizers{padding:26px 16px 34px;margin-top:14px}
-      .organizers-intro{grid-template-columns:1fr;gap:8px;margin-bottom:24px}
-      .organizers-mission{margin:4px 0 0;font-size:14px}
-      .organizer-list{grid-template-columns:1fr;gap:18px}
-      .organizer{grid-template-columns:60px 1fr;gap:13px;padding-top:15px}
-      .portrait-wrap{width:60px;height:60px}
+      .organizers{padding:24px 16px 30px;margin-top:14px}
+      .host-summary{grid-template-columns:1fr;gap:22px}
+      .host-profile{grid-template-columns:58px 1fr;gap:12px}
+      .portrait-wrap{width:58px;height:58px}
+      .host-story{font-size:13.5px}
 
       .testimonials{padding:22px 16px 74px}
       .testimonials-intro{grid-template-columns:1fr;gap:14px;margin-bottom:24px}
@@ -787,33 +766,23 @@
 
 
       <section class="organizers" id="organizers">
-        <div class="organizers-intro">
-          <div>
-            <div class="micro">About Us</div>
-            <h2>Your Hosts</h2>
-          </div>
-          <p class="organizers-mission">We believe some of the most useful growth happens when people step away from the usual professional setting and spend real time together. Our goal is to create dinners where leaders can build genuine relationships, challenge their thinking, and leave with more than they came in with.</p>
-        </div>
-
-        <div class="organizer-list">
-          <div class="organizer">
-            <div class="portrait-wrap"><img class="portrait" src="ben-russo.png" alt="Ben Russo" /></div>
-            <div class="organizer-copy">
-              <h3>Ben Russo</h3>
-              <div class="organizer-role">HR Executive</div>
-              <p>Ben has spent his career leading people and culture and creating spaces where leaders can learn from one another.</p>
-              <a href="https://www.linkedin.com/in/ben-russo/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <div class="host-summary">
+          <div class="host-profile">
+            <div class="portrait-wrap">
+              <img class="portrait" src="mike-hill.png" alt="Mike Hill" />
+            </div>
+            <div class="host-meta">
+              <div class="organizer-copy">
+                <h3>Mike Hill</h3>
+                <div class="organizer-role">Founder</div>
+                <a href="https://www.linkedin.com/in/michaelhill07/" target="_blank" rel="noopener">LinkedIn ↗</a>
+              </div>
             </div>
           </div>
 
-          <div class="organizer">
-            <div class="portrait-wrap"><img class="portrait" src="mike-hill.png" alt="Mike Hill" /></div>
-            <div class="organizer-copy">
-              <h3>Mike Hill</h3>
-              <div class="organizer-role">Event Planner</div>
-              <p>Mike is a marketer who believes the right room can create stronger ideas, relationships, and opportunities.</p>
-              <a href="https://www.linkedin.com/in/michaelhill07/" target="_blank" rel="noopener">LinkedIn ↗</a>
-            </div>
+          <div class="host-story">
+            <p>I’ve spent most of my career inside growing companies, and some of my best and worst experiences came down to leadership, culture, and how people were treated. That’s what drew me to the people shaping those environments.</p>
+            <p>Over 15+ years leading marketing organizations, I’ve also learned how to bring the right people into the room and create experiences worth remembering. Lumenair Dinners bring those two ideas together.</p>
           </div>
         </div>
       </section>
