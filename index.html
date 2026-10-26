@@ -79,7 +79,7 @@
       background:linear-gradient(90deg,#efc7f1,#f8c2dd,#ffd9a0);
       -webkit-background-clip:text;background-clip:text;color:transparent;
     }
-    nav a{
+    .site-logo{display:inline-flex;align-items:center;text-decoration:none;flex-shrink:0}\n    .site-logo img{display:block;width:176px;height:auto;max-height:60px;object-fit:contain}\n    nav a{
       text-decoration:none;font-size:12px;letter-spacing:.13em;text-transform:uppercase;
       color:var(--soft);margin-left:28px;
     }
@@ -571,7 +571,7 @@
 
     @media(max-width:420px){
       :root{--gutter:16px}
-      header{height:58px}
+      header{height:58px}\n      .site-logo img{width:138px}
       .hero{padding:20px 0 52px}
       .eyebrow{font-size:9px;letter-spacing:.18em;margin-bottom:20px}
       h1{font-size:clamp(42px,13.5vw,56px);margin-bottom:24px}
@@ -590,7 +590,7 @@
     }
 
     @media(max-width:860px){
-      nav{display:none}
+      nav{display:none}\n      .site-logo img{width:150px}
       header{height:72px}
       .hero{grid-template-columns:1fr;min-height:auto;padding:46px 0 70px;gap:52px}
       .hero-art{height:430px}
@@ -636,7 +636,7 @@
 
   <div class="wrap">
     <header>
-      <span class="wordmark" aria-hidden="true"></span>
+      <a class="site-logo" href="/" aria-label="Lumenairs home"><img src="lumenairs-nav-logo.png" alt="Lumenairs" width="176" height="59"></a>
       <nav>
         <a href="#dinner">Next dinner</a>
         <a href="#about">About</a>
@@ -668,13 +668,15 @@
 
           <div class="event-card">
             <div class="micro">Upcoming / San Francisco</div>
-            <h2>Rebuilding Work for the AI Era</h2>
+            <h2>Pebl x Lumenair Global Tables: SF</h2>
             <div class="event-meta">
-              <div><strong>Date</strong><br>Wednesday, October 21, 2026</div>
-              <div><strong>Guests</strong><br>CPOs + HR executives</div>
-              <div><strong>Format</strong><br>Private dinner</div>
+              <div><strong>Date</strong><br>Tuesday, November 17, 2026</div>
+              <div><strong>Time</strong><br>7:00–9:30 PM PST</div>
+              <div><strong>Venue</strong><br>Terzo, San Francisco</div>
+              <div><strong>Guests</strong><br>CPOs + senior HR executives</div>
+              <div><strong>Format</strong><br>Private, invitation-only dinner</div>
             </div>
-            <span class="event-cta">Invitations opening soon</span>
+            <a class="event-cta" href="https://luma.com/e970y1mm" target="_blank" rel="noopener noreferrer">View dinner &amp; request an invitation</a>
           </div>
         </div>
       </section>
